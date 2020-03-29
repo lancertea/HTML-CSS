@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>div里面的块级元素</title>
+</head>
+<style>
+   
+/* 
+子代内部高度（line-height、padding、border）变化，父代也会变化
+子代margin变化，分情况：
+1.如果父代没有border（没有元素挡住子代的margin）：父子元素的margin就会（上下）合并，变宽没变高
+2.如果父代有border：margin不会合并
+
+第1种情况解决方法：
+1.找元素挡住子代margin：父代设置border、padding
+2.在父元素那里设置overflow:hidden
+ */
+.child{
+    border:  10px solid red;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dad{
+    outline:  5px solid green;
+    
+} 
+
+.grand{
+    border:  10px solid blue;
+    margin-bottom: 100px;
+}
+
+/*
+总结：
+div的高度是由其内部文档流（块级|行级）中元素高度的总和决定的
+脱离文档流(算高度上不算他)
+1.float
+2.position:absolute|fixed
+
+*/
+.inner{
+    border:  10px solid red;
+    padding: 10px;
+    margin: 10px;
+}
+
+.outer{
+    outline:  5px solid green;
+    
+} 
+
+/*
+div里的div居中
+
+待补充：全屏居中
+*/
+.a{
+    border:  5px solid red;
+    width: 100px;
+    padding: 10px;
+    /* 左右居中 */
+    margin: 0 auto;
+}
+
+.b{
+    outline:  5px solid green;
+    /* 上下居中 */
+    padding: 100px 0;
+} 
+
+
+</style>
+
+<body>
+ 
+
+    <!-- margin合并 -->
+    <div class="grand">
+        <div class="dad">
+            <div class='child'>
+                111
+            </div>
+        </div>
+    </div>
+
+    <!-- 混合情况 -->
+    <div class="outer">
+       text1
+        <div class="inner">
+          block1 
+        </div>
+        text2
+        <div class="inner">
+          block2  
+        </div>
+        text3
+    </div>
+
+    <div class="b">
+        <div class='a'>
+            11111 
+            11111 
+            11111 
+            11111 
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

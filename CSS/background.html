@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>背景相关属性</title>
+    <style>
+        div {
+            width: 800px;
+            height: 800px;
+
+            background-image: url(pika.jpg);
+            background-repeat: no-repeat;
+            /*repeat*/
+            background-color: pink;
+            /* 水平 垂直 */
+            background-position: 300px 300px;
+           
+            /*隐藏*/
+            /* display: none; 隐藏
+               display: incline;  行级元素：多个占一行，不可设置宽高,设置了也不起作用 
+               display: block;  块级元素：一个占一行，可设置宽高
+               display: inline-block;  行级块元素，多个占一行，可设置宽高
+            */
+
+
+        }
+
+        div:hover span {
+            display: none;
+        }
+
+        span {
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+        }
+
+        .show{
+            width: 300px;
+            height: 300px;
+            background-color: palevioletred;
+            /* 元素不可见，但位置还占着 */
+            visibility: hidden; /*visibily*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        background
+        <span>
+            皮卡~皮卡
+        </span>
+    </div>
+    <h1>111</h1>
+
+    <div class="show">
+     show me
+    </div>
+    <h1>111</h1>
+</body>
+
+</html>

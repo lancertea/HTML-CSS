@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+</head>
+<style>
+    #main {
+        width: 500px;
+        height: 300px;
+        background: gray;
+
+    }
+
+    #aa,
+    #bb,
+    #cc {
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+        position: relative;
+        left: 200px;
+    }
+
+    #aa {
+        background: red;
+
+    }
+
+    #bb {
+        background: yellow;
+        /* 相对定位：相对于自己初始的位置  定位后空间不释放
+        position: relative;
+        left: 50px;
+        top: 100px;
+        */
+         /* 绝对定位：位置相对于最近已定位的祖先元素，如果没有最近已定位的祖先元素 相对于body  定位后空间释放 */
+        position: absolute;
+        left: 30px;
+        right: 30px;
+    }
+
+    #cc {
+        background: blue;
+    }
+
+    /* fixed  固定定位：位置相对可视页面，定位后空间释放 */
+    #dd{
+        width: 50px;
+        height: 50px;
+        background: cadetblue;
+        position: fixed;
+        left: 400px;
+        top: 400px;
+    }
+
+
+</style>
+
+<body>
+    <div id="main">
+        <div id="aa">1</div><div id="bb">2</div><div id="cc">3</div>
+
+        <!-- 
+        这样写各个元素之间会有小空隙
+        <div id="aa">1</div>
+        <div id="bb">2</div>
+        <div id="cc">3</div> 
+         -->
+    </div>
+
+    <div id="dd">
+        我是广告
+    </div>
+
+
+</body>
+
+</html>

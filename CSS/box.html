@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+</head>
+<style>
+    #aa {
+        width: 200px;
+        /*内容框高*/
+        height: 200px;
+        background: palevioletred;
+        /* 内边距 顺时针：上右下左 */
+        padding: 30px;
+        /* 边框 */
+        /* border-style: dotted 点线  dashed  虚线 solid 实线 */
+        border: 5px black dotted;
+        /* 外边距 */
+        margin: 50px;
+
+    }
+
+    #bb {
+        width: 100px;
+        height: 100px;
+        background: plum;
+        padding: 20px;
+
+    }
+
+
+    /*
+   CSS盒模型  内容+padding+border+margin
+   1.标准盒模型
+   width属性：内容的宽度
+   2.怪异盒模型   IE6及以下，不写DOCTYPE文档声明的时候
+   width属性：内容的宽度++padding+border
+   */
+</style>
+
+<body>
+    <div id="aa">
+        123
+
+    </div>
+
+    <div id="bb">
+        456
+    </div>
+
+
+</body>
+
+</html>

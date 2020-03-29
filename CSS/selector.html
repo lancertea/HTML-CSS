@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style>
+        /* 标签选择器 */
+        div {
+            width: 300px;
+            height: 100px;
+            background: red;
+        }
+
+        /* id选择器（一个页面中id是唯一的） */
+        #mdiv {
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+        /* class选择器 */
+        .mli {
+            width: 100px;
+            height: 50px;
+            background: pink;
+        }
+
+        /* 后代选择器 */
+        #mul .mli {
+            width: 100px;
+            height: 50px;
+            background: purple;
+        }
+
+        /* 子代选择器 */
+        #mul>li {
+            border: 4px solid red;
+        }
+
+        /* 相邻选择器 */
+        #close+li {
+            border: 4px solid black;
+        }
+
+        /* 伪类选择器 */
+        /* hover:鼠标划入,也可用于其他标签 */
+        a:hover {
+            background: green;
+        }
+
+        /* link:未访问 */
+        a:link {
+            background: blue;
+        }
+
+        /* visited:已访问 */
+        a:visited {
+            background: red;
+        }
+
+        /* active:选中，还没点击 */
+        a:active {
+            background: yellow;
+        }
+
+        /* 伪元素选择器 ：用CSS语法添加元素，这个元素不是真实存在的*/
+        /* 内部的后边添加一个伪元素，且是一个行内元素,类似一个span */
+        .demo::after {
+            content: '我在后面';
+        }
+
+        .demo::before {
+            content: '我在前面';
+        }
+
+        /* 属性选择器 */
+        div[id] {
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        111
+    </div>
+
+    <div id='mdiv'>
+        222
+    </div>
+
+    <ul>
+        <li id="close">111</li>
+        <li class="mli">222</li>
+        <li class="mli">333</li>
+    </ul>
+
+    <ul id="mul">
+        <li>111</li>
+        <li class="mli">222</li>
+        <li class="mli">333
+            <ul>
+                <li>
+                    111111
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <a href="https://www.baidu.com/">百度</a>
+
+    <div class="demo" id='1'>
+        demo
+        <h2>123</h2>
+        233
+    </div>
+
+    <!-- 
+    优先级
+    选择器越特殊，它的优先级越高。也就是选择器指向的越准确，它的优先级就越高，按照权重由高到低： 
+    !important最高
+    内联样式 1000
+    id选择器 100
+    类选择器 | 属性选择器 | 伪类选择器 10
+    html标签 | 伪元素选择器 1
+   权重值相同的情况下，后面的样式会覆盖前面的
+
+    -->
+</body>
+
+</html>

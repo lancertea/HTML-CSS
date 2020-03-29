@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+</head>
+<style>
+    #m1 {
+        width: 500px;
+        height: 200px;
+        background: gray;
+
+    }
+
+    #aa {
+        width: 100px;
+        height: 100px;
+        background: seagreen;
+        /* 浮动的元素 脱离文档流 空间释放 */
+        float: left;
+    }
+
+
+    #bb {
+        width: 100px;
+        height: 100px;
+        background: blue;
+        float: right;
+    }
+
+    #cc {
+        background: yellow;
+        clear: both;
+    }
+
+    #m2 {
+        width: 500px;
+        /* height: 300px; */
+        background: antiquewhite;
+
+    }
+
+    #dd {
+        clear: both;
+    }
+
+    /* 解决方式2：伪元素 */
+    #m2::after {
+        content: '';
+        display: block;
+        clear: both;
+
+    }
+
+    #m3 {
+        width: 500px;
+        background: palevioletred;
+        /* 解决方式3：溢出隐藏 */
+        overflow: hidden;
+    }
+
+    /* 
+     BFC 块级格式化上下文
+     触发BFC overflow: hidden;  
+     
+     BFC规则（浮动的元素也参与计算高度）去渲染页面
+     */
+</style>
+
+<body>
+    <div id="m1">
+
+        <div id="aa">1</div>
+        <div id="bb">2</div>
+        <div id="cc">3</div>
+    </div>
+
+    <!-- 浮动导致的塌陷 -->
+    <div id="m2">
+
+        <div id="aa">1</div>
+        <div id="bb">2</div>
+        <!-- 解决方式1：在后面加一个清除浮动的 -->
+        <!-- <div id="dd"></div> -->
+    </div>
+
+    <div id="m3">
+
+        <div id="aa">1</div>
+        <div id="bb">2</div>
+    </div>
+
+
+
+
+</body>
+
+</html>

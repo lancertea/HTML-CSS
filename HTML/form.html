@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+
+<body>
+    <form method="GET" action="">
+        <!-- action:服务器文件，浏览器输入的数据被传送到的地方    -->
+        <!-- name:为控件命名，以备后台程序使用 -->
+
+        <!-- 文本输入框 -->
+         <!-- value：为文本输入框设置默认值。（一般起到提示作用）  ？不填会把该值提交到服务器吗？？-->
+        <!-- 可用label和id配合使用获取焦点 -->
+        <label for="username">用户名：</label><input id='username' type="text" value="请输入名字"><br />
+        密码：<input type="password">
+
+        <!-- 选择框 -->
+        <!-- value：提交数据到服务器的值  ？不写value提交给服务器的是什么值？-->
+        <!-- 单选框用相同name属性才能实现单选，同一组单选/复选按钮，name属性值一定要一致 -->
+        <div>
+            男：<input type="radio" name="sex">
+            女：<input type="radio" name="sex">
+        </div>
+
+        <div>
+            吃饭<input type="checkbox" name="hobby">
+            睡觉<input type="checkbox" name="hobby">
+            打豆豆<input type="checkbox" name="hobby">
+        </div>
+        
+        <div>
+        <h3>请选择扶贫方式：(可多选哦~~~)</h3>
+        <select multiple='multiple'>
+            <option value="zfb">支付宝</option>
+            <option value="wx">微信</option>
+            <option value="cash">现金</option>
+        </select>
+        </div>
+
+        <!-- 文本输入域 -->
+        <div>
+        <textarea rows="10" cols="30">请输入见死不救原因：</textarea>
+        </div>
+
+        <div>
+        <!-- 按钮 -->
+         <!-- value：按钮上显示的字-->
+        <input type="submit" value="我选好了">
+        <input type="reset"  value="我重新选">
+        <button>我放弃</button>
+        </div>
+    </form>
+</body>
+
+</html>
