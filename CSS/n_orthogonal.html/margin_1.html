@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>margin合并问题</title>
+</head>
+<style>
+    body {
+        border: 2px solid red;
+    }
+
+    div.start {
+        height: 20px;
+        border: 2px solid;
+        margin: 10px;
+    }
+
+
+    /* 解决方式1： 
+div.resolve{
+    border-top: 0.1px solid; 
+}
+*/
+
+
+    /* 解决方式2：
+div.resolve{
+    display:flow-root; 
+}
+*/
+    /*flex  grid  table  flow-root*/
+
+
+    /* 解决方式3：
+div.resolve{
+    overflow: hidden;
+}
+*/
+    /*auto  hidden*/
+</style>
+
+<body>
+
+
+    <div class="start">1</div>
+    <div class="resolve"></div>
+    <div class="start">2</div>
+    <div class="resolve"></div>
+    <div class="start">3</div>
+
+
+
+</body>
+
+</html>
