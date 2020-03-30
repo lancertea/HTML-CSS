@@ -3,12 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>div里面的块级元素</title>
+    <title>块级元素的宽高</title>
 </head>
 <style>
    
 /* 
-子代内部高度（heigth、line-height、padding、border）变化，父代也会变化
+  单个div的高度不是里面文本的高度，而是(字体)建议的行高（比文本高度大）
+  如果想明确行高 可以用line-height  不要用height
+  div的高度=建议的行高|line-height+padding+border
+ 
+  如果没设置宽度，div的宽度是浏览器的决定的，而不是里面的文本
+
+  如果div里面是行级元素，行级元素的padding、border、margin均不算做div的高度，只有内容算
+*/
+.solo{
+    border: 1px solid;
+    line-height: 30px;
+    /* height: 30px; */
+    padding: 10px;
+    margin:10px;
+}
+
+/*
+如果div里面是块级元素，子代内部高度（heigth、line-height、padding、border）变化，父代也会变化
 子代margin变化，分情况：
 1.如果父代没有border（没有元素挡住子代的margin）：父子元素的margin就会（上下）合并，变宽没变高
 2.如果父代有border：margin不会合并
@@ -18,6 +35,9 @@
 2.在父元素那里设置overflow:hidden|auto
 3.在父元素那里设置display:inline-block|table|flex
  */
+
+
+
 .child{
     border:  10px solid red;
     padding: 10px;
@@ -57,7 +77,9 @@ ps:相对定位：relative是不脱离文档流的，它是相对原来的位置
 </style>
 
 <body>
- 
+   <div class="solo">
+       123
+   </div>
 
     <!-- margin合并 -->
     <div class="grand">
