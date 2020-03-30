@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>float影响文字的排版</title>
+</head>
+<style>
+    #parent {
+        background: pink;
+        height: 100px;
+
+    }
+
+    #float {
+        background: blue;
+        width: 100px;
+        height: 60px;
+        float: left;
+
+    }
+
+    #child {
+        background: green;
+        width: 300px;
+        height: 50px;
+
+    }
+</style>
+
+<body>
+    <!-- 这里的float元素添加了float样式，所以浮于child 的上面，理应来说'内联样式'这几个字
+    应该位于child元素的左上角，然而它却不是这样排版的。因为float就是做图文混排的。
+    这就导致了float属性影响到文字的排版。 -->
+
+    <div id="parent">
+        <div id="float">浮动元素</div>
+        <div id="child">内联样式</div>
+    </div>
+
+
+</body>
+
+</html>
