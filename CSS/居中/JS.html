@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>居中：知道具体宽高，利用JavaScript</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+
+    .box {
+        box-sizing: border-box;
+        border: 1px solid red;
+        width: 100px;
+        height: 50px;
+        line-height: 48px;
+        text-align: center;
+    }
+
+    body {
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="box" id="box">
+        我是文本
+    </div>
+
+    <script>
+        let HTML = document.documentElement,
+            winW = HTML.clientWidth,
+            winH = HTML.clientHeight,
+            box=document.getElementById('box'),
+            boxW = box.offsetWidth,
+            boxH = box.offsetHeight;
+        box.style.position = 'absolute';
+        box.style.left = (winW - boxW) / 2 + 'px';
+        box.style.top = (winH - boxH) / 2 + 'px';
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>居中：利用flex</title>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    
+    .box {
+        box-sizing: border-box;
+        border: 1px solid red;
+        /* width: 100px;
+        height: 50px;*/
+        line-height: 48px; 
+        text-align: center;
+    }
+
+    /* 利用flex*/
+    body {
+        display: flex;
+        /* 水平居中 */
+        justify-content: center;
+        /* 竖直居中 */
+        align-items: center;
+    }
+
+</style>
+
+<body>
+    <div class="box">
+        我是文本
+    </div>
+
+
+</body>
+
+</html>

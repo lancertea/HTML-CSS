@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>居中:利用table-cell</title>
+</head>
+<style>
+    .box {
+        box-sizing: border-box;
+        border: 1px solid red;
+        /* width: 100px;
+        height: 50px; */
+        line-height: 48px;
+        text-align: center;
+    }
+
+    /* 利用table-cell,这个本来是控制文本居中的*/
+    /* 要求父元素得有固定宽高才能用这个方法 */
+    .outer {
+        width: 500px;
+        height: 500px;
+        background: pink;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .box {
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <div class="outer">
+        <div class="box">
+            我是文本
+        </div>
+    </div>
+
+</body>
+
+</html>
