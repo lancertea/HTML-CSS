@@ -9,6 +9,8 @@
     /*
    div的高度不是文本的高度，而是(字体)建议的行高（比文本高度大）
    如果想明确行高 可以用line-height  不要用height
+   div的高度=建议的行高+padding+border
+   注意：如果div里面是行级元素，行级元素的padding、border、margin均不算做div的高度，只有内容算
 
    如果没设置宽度，div的宽度是浏览器的决定的，而不是里面的文本
  
@@ -27,9 +29,25 @@
    */
     span {
         border: 2px solid red;
-        /* 对span设置width和height没有效果，所以它默认的display是inline */
+        /* 对span设置width和height没有效果，它默认的display是inline */
+        /* 
+        span的高度=建议的行高（line-height）+padding+border
+        span的宽度=内容+padding+margin
+        */
+        padding: 20px;
+        margin: 20px;
         width: 300px;
         height: 200px;
+    }
+
+    #aa{
+        border: 2px solid;
+        
+    }
+
+    #bb{
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     ul {
@@ -51,7 +69,8 @@
     }
 
 
-    #aa {
+
+    #cc {
         border: 1px solid red;
         /*
         不换行，可以发现div的宽度不是由多少文字决定的，是浏览器的宽度决定的
@@ -76,9 +95,14 @@
 
 <body>
     <!-- 解法1： -->
+    <div id="aa">
     <span>hello</span><span>world</span>
+    123
+    </div>
+
 
     <!-- 解法2： -->
+    <div id="bb">
     <ul class="clearfix">
         <li>选项1</li>
         <li>选项2</li>
@@ -87,9 +111,9 @@
         <li>选项5</li>
         <li>选项6</li>
     </ul>
-
+    </div>
     <!-- CSS单行文本省略 -->
-    <div id="aa">
+    <div id="cc">
         1
         2
         3
