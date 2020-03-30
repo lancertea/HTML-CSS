@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>div里的div居中</title>
+</head>
+<style>
+
+/* 不限制父元素高度的绝对居中 */
+/* .inner{
+    border:  5px solid red;
+    width: 100px;
+    padding: 10px; */
+    /* 左右居中 */
+    /* margin: 0 auto;
+}
+
+.outer{
+    outline:  5px solid green; */
+    /* 上下居中 */
+    /* padding: 100px 0;
+}   */
+
+/* 全屏居中 */
+body{
+    margin: 0;
+}
+
+.inner{
+    border:  5px solid red;
+    padding: 10px;
+    
+}
+
+.outer{
+    border:  5px solid green;
+   height: 100vh;
+   box-sizing: border-box;
+   /* 方法*/
+   display:flex;
+   justify-content: center;
+   align-items: center;
+} 
+
+</style>
+
+<body>
+ 
+    <div class="outer">
+        <div class='inner'>
+            11111 
+            11111 
+            11111 
+            11111 
+            
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
