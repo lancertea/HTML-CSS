@@ -6,23 +6,55 @@
     <title>子元素的外边距和父元素合并</title>
 </head>
 <style>
-#parent{
-    background: pink;
-    /* outline:2px solid green  也可以*/
-}
+    #parent {
+        background: pink;
+        /* outline:2px solid green  也可以*/
+    }
 
-#child{
-    height: 100px;
-    border: 2px solid red;
-    margin-top: 100px;
-}
+    #child {
+        height: 100px;
+        border: 2px solid red;
+        margin-top: 100px;
+    }
 
-/*
+    /*
 这里由于child写了margin-top:100px; 就把父元素parent也下拉了100px。
 这是因为没有什么东西挡住父元素的margin，这样子元素的外边距就会和父元素合并起来。
 */
 
+    /* 解决方式1：
+#parent{
+ border-top: 0.1px solid;
+}
+*/
+    /*border-bottom*/
 
+    /* 解决方式2：
+#parent{
+ padding-top: 0.1px;
+}
+padding-bottom
+*/
+
+    /* 解决方式3:*/
+    #parent {
+        display: flex;
+        width: 1200px;
+    }
+
+    #child {
+        width: 1200px;
+    }
+
+    /* inline-block table flex*/
+
+
+    /* 解决方式4：
+#parent{
+overflow: auto;
+}  
+*/
+    /* hidden  auto*/
 </style>
 
 <body>
@@ -32,7 +64,7 @@
         <div id="child"></div>
     </div>
 
-   
+
 </body>
 
 </html>
