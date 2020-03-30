@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>transform会影响fixed定位</title>
+</head>
+<style>
+    html{
+        border: 1px solid;
+    }
+
+    #parent {
+        background: pink;
+        height: 100px;
+        
+        
+    }
+
+    #child {
+        
+        border: 2px solid red;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        
+    }
+/* fixed本来应该是相对根元素（窗口）定位的，
+但在父元素增加了 transform: scale(1)之后，child就相对于其父元素定位了 */
+    #parent{
+        transform: scale(1);
+    }
+
+
+ 
+</style>
+
+<body>
+
+
+    <div id="parent">
+        <div id="child">内联样式</div>
+    </div>
+
+
+</body>
+
+</html>
