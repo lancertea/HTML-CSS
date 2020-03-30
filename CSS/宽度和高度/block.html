@@ -6,8 +6,7 @@
     <title>块级元素的宽高</title>
 </head>
 <style>
-   
-/* 
+    /* 
   单个div的高度不是里面文本的高度，而是(字体)建议的行高（比文本高度大）
   如果想明确行高 可以用line-height  不要用height
   div的高度=建议的行高|line-height+padding+border
@@ -16,15 +15,15 @@
 
   如果div里面是行级元素，行级元素的padding、border、margin均不算做div的高度，只有内容算
 */
-.solo{
-    border: 1px solid;
-    line-height: 30px;
-    /* height: 30px; */
-    padding: 10px;
-    margin:10px;
-}
+    .solo {
+        border: 1px solid;
+        line-height: 30px;
+        /* height: 30px; */
+        padding: 10px;
+        margin: 10px;
+    }
 
-/*
+    /*
 如果div里面是块级元素，子代内部高度（heigth、line-height、padding、border）变化，父代也会变化
 子代margin变化，分情况：
 1.如果父代没有border（没有元素挡住子代的margin）：父子元素的margin就会（上下）合并，变宽没变高
@@ -38,48 +37,51 @@
 
 
 
-.child{
-    border:  10px solid red;
-    padding: 10px;
-    margin: 10px;
-}
+    .child {
+        border: 10px solid red;
+        padding: 10px;
+        margin: 10px;
+    }
 
-.dad{
-    outline:  5px solid green;
-    
-} 
+    .dad {
+        outline: 5px solid green;
 
-.grand{
-    border:  10px solid blue;
-    margin-bottom: 100px;
-}
+    }
 
-/*
-总结：
-div的高度是由其内部文档流（块级|行级）中元素高度的总和决定的
-脱离文档流(算高度上不算他)
-1.float
-2.position:absolute|fixed
-ps:相对定位：relative是不脱离文档流的，它是相对原来的位置移动了一些，不会影响其他元素的位置
+    .grand {
+        border: 10px solid blue;
+        margin-bottom: 100px;
+    }
 
-*/
-.inner{
-    border:  10px solid red;
-    padding: 10px;
-    margin: 10px;
-}
+    /*
+   总结：
+   div的高度是由其内部文档流（块级|行级）中元素高度的总和决定的
+   脱离文档流(算高度上不算他)
+   1.float
+   2.position:absolute|fixed
+   ps:相对定位：relative是不脱离文档流的，它是相对原来的位置移动了一些，不会影响其他元素的位置
+    */
+    .inner {
+        border: 10px solid red;
+        padding: 10px;
+        margin: 10px;
+    }
 
-.outer{
-    outline:  5px solid green;
-    
-} 
+    .outer {
+        outline: 5px solid green;
 
+    }
+
+    .one{
+        border: 2px solid blue;
+        padding-top: 100%;
+    }
 </style>
 
 <body>
-   <div class="solo">
-       123
-   </div>
+    <div class="solo">
+        123
+    </div>
 
     <!-- margin合并 -->
     <div class="grand">
@@ -92,16 +94,19 @@ ps:相对定位：relative是不脱离文档流的，它是相对原来的位置
 
     <!-- 混合情况 -->
     <div class="outer">
-       text1
+        text1
         <div class="inner">
-          block1 
+            block1
         </div>
         text2
         <div class="inner">
-          block2  
+            block2
         </div>
         text3
     </div>
+
+    <!-- 1比1的div -->
+    <div class="one"></div>
 </body>
 
 </html>
