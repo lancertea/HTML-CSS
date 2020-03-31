@@ -13,9 +13,12 @@
         padding: 15px;
         margin: 12px;
         background-color: pink;
-        /* 加这两句发现 negative在上面了，位于父border和块级元素之间*/
-        position: relative;
-        z-index: 0;
+        /* 触发堆叠上下文： negative在上面了，位于父border和块级元素之间*/
+        /* position: relative;
+        z-index: 0; */
+ 
+        /* opacity 属性值小于 1 的元素 触发堆叠上下文*/
+        opacity: 0.5;
     }
 
     .inner {
@@ -29,6 +32,7 @@
         width: 50px;
         height: 50px;
         background: brown;
+        margin-top: -15px;
         float: left;
         color: seashell;
     }
@@ -55,7 +59,7 @@
     <div class="outer">
        <span>█ █ █ █</span> 
         
-       <div class="inner"></div>
+        <div class="inner"></div>
         <div class="relative"></div>
         <div class="negative"></div>
         <div class="float">█ █ █ █</div>
