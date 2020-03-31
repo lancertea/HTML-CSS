@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>堆叠上下文</title>
+</head>
+<style>
+    .outer {
+        width: 200px;
+        height: 200px;
+        border: 10px solid rgba(255, 0, 0, 0.5);
+        padding: 15px;
+        margin: 12px;
+        background-color: pink;
+        /* 加这两句发现 negative在上面了，位于父border和块级元素之间*/
+        position: relative;
+        z-index: 0;
+    }
+
+    .inner {
+        height: 40px;
+        background: purple;
+        margin-top: -15px;
+        color: black;
+    }
+
+   .float {
+        width: 50px;
+        height: 50px;
+        background: brown;
+        float: left;
+        color: seashell;
+    }
+
+    .relative{
+        width: 100px;
+        height: 100px;
+        background: gray;
+        margin-top: -10px;
+        position: relative;
+    }
+
+    .negative{
+        width: 100px;
+        height: 100px;
+        background: green;
+        position: relative;
+        z-index: -1;
+        margin-top: -50px;
+    }
+</style>
+
+<body>
+    <div class="outer">
+       <span>█ █ █ █</span> 
+        
+       <div class="inner"></div>
+        <div class="relative"></div>
+        <div class="negative"></div>
+        <div class="float">█ █ █ █</div>
+     </div>
+  
+</body>
+
+</html>
