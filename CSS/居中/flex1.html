@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>居中：不知道盒子宽高，使用CSS3 的 transform将位置在中心点平移自身宽高一半</title>
+    <title>居中：利用flex</title>
 </head>
 <style>
     html,
@@ -12,7 +12,7 @@
         overflow: hidden;
     }
 
-    /* 不知道盒子具体的宽高 */
+    
     .box {
         box-sizing: border-box;
         border: 1px solid red;
@@ -22,17 +22,15 @@
         text-align: center;
     }
 
-    /* 定位3：不知道盒子具体的宽高，使用CSS3 的 transform将位置在中心点平移自身宽高一半*/
+    /* 利用flex*/
     body {
-        position: relative;
+        display: flex;
     }
 
-    .box {
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+    .box{
+        margin: auto;
     }
+
 </style>
 
 <body>

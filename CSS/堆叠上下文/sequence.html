@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>堆叠顺序</title>
+</head>
+<style>
+    .outer1 {
+        width: 200px;
+        height: 200px;
+        /* 可发现border在background上面 */
+        border: 10px solid rgba(255, 0, 0, 0.5);
+        padding: 15px;
+        margin: 12px;
+        background-color: pink;
+        /* 可发现内联元素（文字）在border上面 */
+        /* text-indent: -20px; */
+        color: blue;
+    }
+
+    .inner {
+        height: 40px;
+        background: purple;
+        /* 可发现在同一层时，内联元素在块级元素上面 */
+        margin-top: -15px;
+        color: black;
+    }
+
+    .outer2 {
+        width: 200px;
+        height: 200px;
+        border: 10px solid red;
+        padding: 15px;
+        margin: 12px;
+        background-color: pink;
+        /* 可发现内联元素（文字）在float元素上面 */
+        text-indent: -20px;
+        color: blue;
+    }
+
+    .float {
+        width: 50px;
+        height: 50px;
+        background: brown;
+        float: left;
+        color: seashell;
+    }
+
+    .relative{
+        width: 100px;
+        height: 100px;
+        background: gray;
+        margin-top: -10px;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="outer1">
+        █ █ █ █
+        <!-- 后出现的内联元素盖住了前面出现的内联元素 -->
+        <div class="inner">
+            █ █ █ █
+        </div>
+
+    </div>
+
+    <!-- 浮动 相对定位 绝对定位-->
+    <!-- 浮动元素里的内联元素（文字）比外部元素里的内联元素（文字）低 -->
+    <div class="outer2">
+        █ █ █ █
+        <div class="float">
+            █ █ █ █
+        </div>
+        <!-- 浮动元素在块级元素上面 -->
+        <div class="inner">
+            █ █ █ █
+        </div>
+        <!-- 相对定位在浮动上面 -->
+        <div class="relative"></div>
+
+    </div>
+  <!-- z-index
+只有给position不为static的元素设置才有用，
+设置负值会比background还低，设置正值会在相对|绝对前面
+-->
+</body>
+
+</html>
