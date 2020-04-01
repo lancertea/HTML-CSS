@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FLEX</title>
+</head>
+<style>
+    .child {
+        height: 70px;
+        background: white;
+        border: 2px solid red;
+        margin: 2px;
+    }
+
+    .parent {
+        border: 2px solid black;
+        /* 启用flex布局 */
+        display: flex;
+        background: grey;
+    }
+
+    .child:nth-child(1) {
+        flex: 2 1 auto;
+        order: 2;
+    }
+
+    .child:nth-child(2) {
+        flex: 1 2 auto;
+        order: 4;
+    }
+
+    .child:nth-child(3) {
+        flex: 1 1 auto;
+        order: 1;
+    }
+
+    .child:nth-child(4) {
+        flex: 0 0 auto;
+        order: 3;
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+        <div class="child">3</div>
+        <div class="child">4</div>
+    </div>
+</body>
+
+</html>
