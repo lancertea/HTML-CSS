@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>响应式页面</title>
+    <!-- 限定条件 -->
+    <!-- <link rel="stylesheet" href="style.css" media="(max-width:320px")> -->
+</head>
+<style>
+     *{margin: 0; padding: 0;}
+     a{color:inherit; text-decoration: none;}
+
+     .logo{
+         width: 60px;
+         height: 60px;
+         background: grey;
+         border-radius: 30px;
+     }
+
+     /* .clearfix::after{
+         content: "";
+         display: block;
+         clear: both;
+
+     } */
+
+     header{
+         padding: 10px;
+         position: relative;
+     }
+
+     /* .nav>li{
+         float: left;
+     } */
+
+     .nav{
+         display: none;
+         background: grey;
+         margin-top: 10px;
+     }
+
+     .nav.active{
+         display: flex;
+         justify-content: space-between;
+
+     }
+
+     header>button{
+         position: absolute;
+         right: 20px;
+         top: 26px;
+     }
+     .nav2{display: none;}
+
+     @media (min-width:451px){
+      header>button{
+          display: none;
+      }
+      .nav,.nav.active{display: none;}
+      /* .nav2{display: block;} */
+
+      header{
+          display: flex;
+          align-items: center;
+         
+      }
+      
+      header .nav2{
+          display: flex;
+          margin-left: 20px;
+      }
+
+      header .nav2>li{
+          margin: 0 10px;
+      }
+     }
+</style>
+
+<body>
+<header>
+    <div class="logo"></div>
+    <button id=xx>menu</button>
+    <!-- 用flex,就不需要浮动和清除浮动了 -->
+    <ul id=yy class="nav">
+        <li><a href="#">导航1</a></li>
+        <li><a href="#">导航2</a></li>
+        <li><a href="#">导航3</a></li>
+        <li><a href="#">导航4</a></li>
+        <li><a href="#">导航5</a></li>
+    </ul>
+
+
+    <ul class="nav2">
+        <li><a href="#">导航1</a></li>
+        <li><a href="#">导航2</a></li>
+        <li><a href="#">导航3</a></li>
+        <li><a href="#">导航4</a></li>
+        <li><a href="#">导航5</a></li>
+    </ul>
+</header>
+<script>
+    
+    xx.onclick=function(){
+    // 方式一：
+    //    if( yy.style.display==='block'){
+    //        yy.style.display='none'
+    //    }
+    //    else{
+    //        yy.style.display='block'
+    //    }
+
+    //方式二：
+         yy.classList.toggle('active')
+        }
+//toggle方法。是add、remove、contains的结合，不仅能检测元素是否包含某个类，而且还具备增删功能，即如果存在某个类，
+// 就remove掉，如果不存在，就add一下。返回一个Boolean值。
+
+//如果body不存在 class_a 的类名，就会给body增加一个 class_a 的类
+//document.body.classList.toggle('class_a'); //true
+
+//再执行一遍，class_a已被删除了
+//document.body.classList.toggle('class_a'); //false
+    
+</script>
+</body>
+
+</html>
