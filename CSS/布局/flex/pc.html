@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>PC</title>
+</head>
+<style>
+    header {
+        height: 50px;
+        background: grey;
+    }
+
+    footer {
+        height: 50px;
+        background: grey;
+    }
+
+    .content {
+        display: flex;
+    }
+
+    .content>aside {
+        width: 120px;
+        background: darkcyan;
+        order: 1;
+    }
+
+    .content>main {
+        height: 400px;
+        flex: 1;
+        order: 2;
+        background: brown;
+    }
+
+    .content>nav {
+        width: 100px;
+        background: darkolivegreen;
+        order:3
+    }
+</style>
+
+<body>
+    <header>
+
+    </header>
+    <div class="content">
+        <aside id="aside1"></aside>
+        <main></main>
+        <nav></nav>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
