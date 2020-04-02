@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+</head>
+<style>
+/*
+ 浮动布局：
+1.给子元素加上float：left
+2.给父元素加上clearfix
+ */
+    .parent {
+        border: 1px solid;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: pink;
+        /* min-width: 300px */
+    }
+
+    /* .child{
+    border: 1px solid green;  
+ } */
+    .child:nth-child(1) {
+        width: 100px;
+        background-color: #333;
+        height: 36px;
+        color: white;
+        text-align: center;
+        line-height: 36px;
+    }
+
+    .clearfix::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    /* 让IE 6兼容 */
+    .clearfix {
+        zoom: 1;
+    }
+
+    .nav {
+        line-height: 24px;
+        padding: 6px 0;
+    }
+
+    .item {
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <div class="parent clearfix">
+        <div class="child" style="float: left;">logo</div>
+        <div class="child" style="float: right;">
+            <div class="nav clearfix">
+                <div class="item" style="float: left;">导航1</div>
+                <div class="item" style="float: left;">导航2</div>
+                <div class="item" style="float: left;">导航3</div>
+                <div class="item" style="float: left;">导航4</div>
+                <div class="item" style="float: left;">导航5</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
