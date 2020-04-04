@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>bfc功能：子元素内部的块级元素</title>
+    <style>
+        .parent {
+            border: 2px solid red;
+            /* 触发BFC */
+            display: flow-root;
+
+        }
+
+        .child {
+            /* 子元素设置浮动后，父元素就包不住子元素了 */
+            height: 100px;
+            width: 400px;
+            background: green;
+            /* 子元素设置了浮动，自身也是一个BFC，它内部的块级元素不归parent管 */
+            float: left;
+            margin-top: 100px;
+        }
+
+        .c1{
+            height: 50px;
+            width: 200px;
+            background: blue;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="c1"></div>
+        </div>
+       
+    </div>
+</body>
+
+</html>

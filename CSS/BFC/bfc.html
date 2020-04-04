@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>bfc功能：父元素管子元素</title>
+    <style>
+        .parent {
+            border: 2px solid red;
+            /* 1.浮动元素 */
+            /* float: left; */
+
+            /* 2.绝对定位 */
+            /* position: absolute; */
+
+            /* 3. 非块盒的块容器（inline-blocks|table-cell|table-caption）*/
+            /* display: inline-block; */
+
+            /* 4. overflow不为visible的块盒*/
+            /* overflow: auto; */
+
+            /* 5.让当前元素触发BFC */
+            /* 触发BFC后，子元素的margin没合并 */
+            display: flow-root;
+
+        }
+
+        .child {
+            /* 子元素设置浮动后，父元素就包不住子元素了 */
+            height: 100px;
+            width: 400px;
+            background: green;
+            float: left;
+            margin: 10px;
+            }
+    </style>
+</head>
+<!-- 清除浮动用clearfix，不要用BFC -->
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+
+    </div>
+</body>
+
+</html>

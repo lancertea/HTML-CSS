@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>bfc功能：兄弟元素之间划清界限</title>
+    <style>
+        .main {
+            width: 100px;
+            min-height: 600px;
+            border: 2px solid red;
+            float: left;
+            /* 间距设置：2选1 */
+            /* margin-right: 20px; */
+        }
+
+        .sider {
+            min-height: 600px;
+            border:3px solid green;
+            /* 触发BFC */
+            overflow: auto;
+            /* 间距设置  2选1*/
+            /* margin-left: 120px; */
+        }
+    </style>
+</head>
+<!-- 现在划清界限多用flex布局 -->
+<body>
+    <div class="main">main</div>
+    <div class="sider">sider</div>
+
+
+    </div>
+</body>
+
+</html>
