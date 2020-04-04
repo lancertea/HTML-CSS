@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>用flex实现圣杯布局</title>
+
+    <style>
+        html,
+        body {
+            overflow: hidden;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+
+        }
+
+        .left,
+        .right {
+            /* 两侧大小固定 */
+            flex: 0 0 200px;
+            height: 200px;
+            background: lightskyblue;
+        }
+
+        .container .center {
+            flex: 1;
+            min-height: 400px;
+            background: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left"></div>
+        <div class='center'></div>
+        <div class="right"></div>
+    </div>
+
+
+
+</body>
+
+</html>

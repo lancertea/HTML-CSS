@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>圣杯布局</title>
+    <title>双飞翼布局</title>
 
     <style>
         html,
@@ -12,10 +12,25 @@
             overflow: hidden;
         }
 
-        .container {
-            height: 100%;
-            padding: 0 200px;
+        .left,
+        .container,
+        .right {
+            float: left;
         }
+
+        .container {
+            width: 100%;
+
+        }
+
+
+        .container .center {
+            margin: 0 200px;
+            min-height: 400px;
+            background: lightsalmon;
+        }
+
+        
 
         .left,
         .right {
@@ -24,17 +39,7 @@
             background: lightskyblue;
         }
 
-        .center {
-            width: 100%;
-            min-height: 400px;
-            background: lightsalmon;
-        }
 
-        .left,
-        .center,
-        .right {
-            float: left;
-        }
 
         .clearfix::after {
             content: '';
@@ -44,24 +49,22 @@
 
         .left {
             margin-left: -100%;
-            position: relative;
-            left: -200px;
         }
 
         .right {
-            margin-right: -200px;
+            margin-left: -200px;
         }
     </style>
 </head>
 
-<body>
+<body class="clearfix">
 
-    <div class="container clearfix">
+    <div class="container">
         <div class='center'></div>
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
 
+    </div>
+    <div class="left"></div>
+    <div class="right"></div>
 
 
 </body>
