@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>用flex实现float.html里的布局</title>
+    <title>手机端</title>
 </head>
 <style>
     /*
@@ -11,9 +11,12 @@
 1.给父元素加上display:flex
 2.给子元素加上clearfix
  */
-    *{
+    * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
+
     .parent {
 
         margin-left: auto;
@@ -32,6 +35,27 @@
         color: white;
         text-align: center;
         line-height: 36px;
+
+        float: left;
+    }
+
+    .child:nth-child(2) {
+        float: right;
+    }
+
+    .nav2 {
+        display: none;
+    }
+
+    @media (max-width: 420px) {
+        .nav2 {
+            display: block;
+        }
+
+        .nav {
+            display: none;
+        }
+
     }
 
     .clearfix::after {
@@ -52,6 +76,7 @@
 
     .item {
         margin-left: 20px;
+        float: left;
     }
 
     .banner {
@@ -61,28 +86,48 @@
         margin-top: 10px;
         margin-left: auto;
         margin-right: auto;
+        /* 防止图片变形，不要用img */
+        background: transparent url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585974199398&di=51c1348b14cdbacc74217960b17aaebc&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D512676679%2C583146342%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1200%26h%3D800)
+        no-repeat center;
+        background-size:cover;
     }
+    @media (max-width: 420px) {
+        .banner {
+            width:auto;
+        }
+
+
+    }
+
 
     .pictures {
         width: 800px;
         /* 居中 1 */
         margin: 0 auto;
         background: pink;
-
-        /* display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; */
+        /* 解决左右滑动问题 */
+        overflow: hidden;
     }
+    @media (max-width: 420px) {
+        .pictures {
+            width:auto;
+        }
+    }
+
 
     .picture {
         width: calc(25% - 8px);
         height: 194px;
         background: palevioletred;
         margin: 4px;
-        /* float: left; */
+        
 
     }
-
+    @media (max-width: 420px) {
+        .picture {
+            width:calc(50% - 8px);
+        }
+    }
 
     /* 用flex实现平均布局  如果图没有8个 */
     .pictures>.xxx {
@@ -101,41 +146,65 @@
         justify-content: space-between;
     }
 
+    @media (max-width: 420px) {
+        .art {
+        width: auto;
+        flex-direction: column;
+        }
+    }
+
+
     .art>.sider {
         height: 300px;
         /* float: left; */
         border: 1px solid;
         width: calc(33.3333% - 20px);
         /* margin-right: 20px; */
-       
+        /*flex*/
+        
+    }
+
+    @media (max-width: 420px) {
+        .art>.sider {
+        height: auto;
+        border: 1px solid;
+        width: auto;
+        
+    }
     }
 
     .art>.main {
         height: 300px;
-        /* float: left; */
         border: 1px solid;
         width: 66.6666%;
-        
     }
 
-  
+    
+    @media (max-width: 420px) {
+        .art>.main {
+        height: auto;
+        border: 1px solid;
+        width: auto;
+    }
+    }
 </style>
 
 <body>
     <div class="parent clearfix">
-        <div class="child" style="float: left;">logo</div>
-        <div class="child" style="float: right;">
+        <div class="child">logo</div>
+        <div class="child">
             <div class="nav clearfix">
-                <div class="item" style="float: left;">导航1</div>
-                <div class="item" style="float: left;">导航2</div>
-                <div class="item" style="float: left;">导航3</div>
-                <div class="item" style="float: left;">导航4</div>
-                <div class="item" style="float: left;">导航5</div>
+                <div class="item">导航1</div>
+                <div class="item">导航2</div>
+                <div class="item">导航3</div>
+                <div class="item">导航4</div>
+                <div class="item">导航5</div>
             </div>
+            <div class="nav2">三</div>
         </div>
     </div>
 
-    
+
 
     <div class="banner"></div>
     <div class="pictures">
@@ -149,6 +218,7 @@
             <div class="picture"></div>
             <!-- <div class="picture"></div> -->
         </div>
+        
     </div>
 
     <div class="art">
