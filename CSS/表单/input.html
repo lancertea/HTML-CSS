@@ -3,66 +3,177 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>文本</title>
+    <title>模仿百度输入框</title>
+    <!-- 这里要加协议 -->
+    <script src="https://at.alicdn.com/t/font_1736206_8crfgohg06s.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+
+        body {
+            border: 1px solid red;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            display: flex;
+            /* 相对下拉菜单定位 */
+            position: relative;
+        }
+
+        .suggestion {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+        }
+
+        .suggestion .active {
+            display: block;
+        }
+
+        .inputWrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .bt {
+            position: absolute;
+            /* border: 1px solid red; */
+            right: 0;
+            top: 0;
+            /* 居中 */
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 4px;
+            color: #b8b8b8;
+
+        }
+
+        .bt .splitLine {
+            width: 0;
+            height: 16px;
+            border-left: 1px solid;
+            margin: 0 4px;
+        }
+
+        /* 清除两者之间的空隙 */
+        .inputWrapper {
+            float: left;
+        }
+
+        .inputWrapper+button {
+            float: left;
+        }
+
+        .inputWrapper+button {
+            background: #3988fb;
+            border: none;
+            font-size: 14px;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .inputWrapper+button:focus {
+            outline: none;
+        }
+
+        .inputWrapper+button:hover {
+            box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.2);
+            background: #3781f0;
+        }
+
+        /* 输入框效果 */
+        .inputWrapper input[type=text] {
+            border: 1px solid #b8b8b8;
+            width: 540px;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 8px;
+            font-size: 15px;
+        }
+
+        .inputWrapper input[type=text]:focus {
+            outline: none;
+            border-color: #4b94fc;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .inputWrapper svg.icon {
+            width: 20px;
+            height: 20px;
+            fill: #b8b8b8;
+        }
+
+        .inputWrapper svg.icon:hover {
+            fill: #4b94fc;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    #aa {
-        width: 300px;
-        height: 200px;
-        background: grey;
-        /* 首行缩进  块级元素*/
-        text-indent: 30px;
-        /* 字体样式 */
-        font-family: cursive;
-
-
-    }
-
-    #bb {
-        width: 300px;
-        height: 200px;
-        background: pink;
-        /* 文本对齐方式 块级元素 */
-        text-align: center;
-        /* 字体大小  默认为16px*/
-        font-size: 30px;
-        /* 字体粗细 100-900 默认为400(normal)   700 bold  */
-        font-weight: bolder;
-        /* 字体样式  normal  italic 斜体*/
-        font-style: italic;
-        /* 字体颜色 */
-        color: seagreen;
-    }
-
-    #cc {
-        width: 300px;
-        height: 200px;
-        background: purple;
-        /* 字符间隔 */
-        letter-spacing: 5px;
-        /* 装饰线  none|underline|overline|line-through*/
-        text-decoration: underline;
-    }
-
-   
-</style>
 
 <body>
-    <div id="aa">
-        我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本
-        我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本
+    <div class="wrapper">
+        <span class="inputWrapper">
+            <input id='keywork' type="text" autocomplete="off">
+            <span class="bt">
+                <svg class="icon">
+                    <use xlink:href="#icon-mic"></use>
+                </svg>
+                <span class="splitLine"></span>
+                <svg class="icon">
+                    <use xlink:href='#icon-camera'></use>
+                </svg>
+            </span>
+        </span>
+
+        <button>百度一下</button>
+
+        <ul class="suggestion">
+            <li>选项1</li>
+            <li>选项2</li>
+            <li>选项3</li>
+            <li>选项4</li>
+        </ul>
 
     </div>
-
-    <div id="bb">
-        我是文本
-    </div>
-
-    <div id="cc">
-        我是文本
-    </div>
-
-   
+    <script>
+        var keywork = document.getElementById('keywork')
+        keywork.oniput = function (e) {
+            if (keywork.value) {
+                suggestion.classList.add('active')
+            } else {
+                suggestion.classList.remove('active')
+            }
+        }
+    </script>
 </body>
 
 </html>
