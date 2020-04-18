@@ -105,15 +105,15 @@
     
     xx.onclick=function(){
     // 方式一：
-    //    if( yy.style.display==='block'){
-    //        yy.style.display='none'
-    //    }
-    //    else{
-    //        yy.style.display='block'
-    //    }
+       if( yy.style.display==='block'){
+           yy.style.display='none'
+       }
+       else{
+           yy.style.display='block'
+       }
 
     //方式二：
-         yy.classList.toggle('active')
+        //  yy.classList.toggle('active')
         }
 //toggle方法。是add、remove、contains的结合，不仅能检测元素是否包含某个类，而且还具备增删功能，即如果存在某个类，
 // 就remove掉，如果不存在，就add一下。返回一个Boolean值。
