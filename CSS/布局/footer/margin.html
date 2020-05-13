@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>将页脚固定到页面底部：margin-top</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            min-height: 100%;
+            
+        }
+
+        .header{
+        height: 50px;
+        background: cornflowerblue;
+        }
+
+        .content {
+            background: blue;
+            /* height: 1000px; */
+            /* 高度等于footer的高度 */
+            padding-bottom:60px;
+           
+        }
+
+       
+        .footer {
+            /* position: relative; */
+             /* 高度等于footer的高度 */
+            margin-top: -60px;
+            height: 60px;
+            background: cornflowerblue;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">Header Section</div>
+        <div class="content">我是内容</div>
+    </div>
+    <div class="footer">Footer Section</div>
+
+</body>
+
+</html>
