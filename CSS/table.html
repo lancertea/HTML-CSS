@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>table表格隔行变色</title>
+    <style>
+     table{
+         margin: 100px auto 0 auto;
+     }
+
+     td{
+         width: 200px;
+         height: 45px;
+         line-height: 45px;
+         text-align: center;
+     }
+
+     /* 奇数 */
+     table tr:nth-child(odd){
+         background: lightcoral;
+     }
+
+     /* 偶数 */
+     table tr:nth-child(even){
+         background: lightskyblue;
+     }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>zzz</td>
+            <td>12</td>
+            <td>女</td>
+        </tr>
+        <tr>
+            <td>sss</td>
+            <td>17</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>yyy</td>
+            <td>24</td>
+            <td>男</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
