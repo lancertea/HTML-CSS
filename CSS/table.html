@@ -6,7 +6,9 @@
     <title>table表格隔行变色</title>
     <style>
      table{
-         margin: 100px auto 0 auto;
+         border: 1px solid rgba(0,0,0,0.5);
+         border-collapse: collapse;
+        
      }
 
      td{
@@ -14,22 +16,28 @@
          height: 45px;
          line-height: 45px;
          text-align: center;
+         border: 1px solid rgba(0,0,0,0.5);
      }
 
      /* 奇数 */
      table tr:nth-child(odd){
-         background: lightcoral;
+         background: white;
      }
 
      /* 偶数 */
      table tr:nth-child(even){
-         background: lightskyblue;
+         background: gray;
+     }
+
+    /* 鼠标移上去变色 */
+     .t :hover{
+         background: steelblue;
      }
     </style>
 </head>
 
 <body>
-    <table border="1" cellspacing="0">
+    <table class="t">
         <tr>
             <th>姓名</th>
             <th>年龄</th>
