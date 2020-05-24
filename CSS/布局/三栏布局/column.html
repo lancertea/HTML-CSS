@@ -78,7 +78,7 @@
         <style>
             .layoutAbsolute {
                 margin-top: 50px;
-               
+
             }
 
             .layoutAbsolute .left {
@@ -117,73 +117,113 @@
         </main>
     </section>
 
-<!-- flex布局 -->
-<section class="layoutFlex">
-    <style>
-        .layoutFlex {
-            margin-top: 200px;
-            display: flex;
-           
-        }
+    <!-- flex布局 -->
+    <section class="layoutFlex">
+        <style>
+            .layoutFlex {
+                margin-top: 200px;
+                display: flex;
 
-        .layoutFlex .left {
-            width: 300px;
-           
+            }
 
-        }
+            .layoutFlex .left {
+                width: 300px;
 
-        .layoutFlex .center {
-            flex: 1;
-        }
 
-        .layoutFlex .right {
-            width: 300px;
-            
-        }      
-    </style>
-    <aside class="left"></aside>
-    <main class="center">
-        <h1>flex布局解决方案</h1>
-        <p>包裹这3个块的父元素display: flex; </p>
-        <p>两边元素设置宽度，中间的元素flex: 1，实现自适应</p>
-        <p>简单，无高度时也能很好自适应，但有兼容性问题</p>
+            }
 
-        <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
+            .layoutFlex .center {
+                flex: 1;
+            }
+
+            .layoutFlex .right {
+                width: 300px;
+
+            }
+        </style>
+        <aside class="left"></aside>
+        <main class="center">
+            <h1>flex布局解决方案</h1>
+            <p>包裹这3个块的父元素display: flex; </p>
+            <p>两边元素设置宽度，中间的元素flex: 1，实现自适应</p>
+            <p>简单，无高度时也能很好自适应，但有兼容性问题</p>
+
+            <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
              当有高度，但高度未知时，中间部分过长，两边会同步长度-->
-        <!-- <p>增加高度</p>
+            <!-- <p>增加高度</p>
         <p>增加高度</p>
         <p>增加高度</p>
         <p>增加高度</p> -->
-    </main>
-    <aside class="right"></aside>
-</section>
+        </main>
+        <aside class="right"></aside>
+    </section>
 
-<!-- grid布局 -->
-<section class="layoutGrid">
-    <style>
-        .layoutGrid {
-            margin-top: 50px;
-            display: Grid;
-            grid-template-columns:300px 1fr 300px;
-           
-        }
-    </style>
-    <aside class="left"></aside>
-    <main class="center">
-        <h1>网格布局解决方案</h1>
-        <p>父元素display: grid;</p>
-        <p>父元素设置 grid-template-columns:300px 1fr 300px</p>
-        <p>无高度时也能很好自适应，但有兼容性问题</p>
+    <!-- grid布局 -->
+    <section class="layoutGrid">
+        <style>
+            .layoutGrid {
+                margin-top: 50px;
+                display: Grid;
+                grid-template-columns: 300px 1fr 300px;
 
-        <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
+            }
+        </style>
+        <aside class="left"></aside>
+        <main class="center">
+            <h1>网格布局解决方案</h1>
+            <p>父元素display: grid;</p>
+            <p>父元素设置 grid-template-columns:300px 1fr 300px</p>
+            <p>无高度时也能很好自适应，但有兼容性问题</p>
+
+            <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
              当有高度，但高度未知时，中间部分过长，两边会同步长度-->
-        <!-- <p>增加高度</p>
+            <!-- <p>增加高度</p>
         <p>增加高度</p>
         <p>增加高度</p>
         <p>增加高度</p> -->
-    </main>
-    <aside class="right"></aside>
-</section>
+        </main>
+        <aside class="right"></aside>
+    </section>
+
+    <!-- table布局 -->
+    <section class="layoutTable">
+        <style>
+            .layoutTable {
+                margin-top: 50px;
+                display: table;
+                width: 100%;
+            }
+
+            .layoutTable .left {
+                display: table-cell;
+                width: 300px;
+            }
+
+            .layoutTable .center {
+                display: table-cell;
+            }
+
+            .layoutTable .right {
+                display: table-cell;
+                width: 300px;
+            }
+        </style>
+        <aside class="left"></aside>
+        <main class="center">
+            <h1>表格布局解决方案</h1>
+            <p>父元素display: table;并且宽度为100%</p>
+            <p>每一个子元素display: table-cell; </p>
+            <p>左右两侧添加宽度，中间不加宽度</p>
+
+            <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
+             当有高度，但高度未知时，中间部分过长，两边会同步长度-->
+            <!-- <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p> -->
+        </main>
+        <aside class="right"></aside>
+    </section>
 
 </body>
 
