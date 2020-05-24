@@ -10,11 +10,11 @@
             padding: 0;
         }
 
-        .left,
+        /* .left,
         .right,
         .center {
             min-height: 100px;
-        }
+        } */
 
         .wrapper {
             display: flex;
@@ -43,7 +43,9 @@
         <aside class="left"></aside>
         <main class="center">
             <h1>flex布局解决方案</h1>
-            <p>包裹这个3个块的父元素display: flex; 中间的元素flex: 1;</p>
+        <p>包裹这3个块的父元素display: flex; </p>
+        <p>两边元素设置宽度，中间的元素flex: 1，实现自适应</p>
+        <p>简单，无高度时也能很好自适应，但有兼容性问题</p>
         </main>
         <aside class="right"></aside>
     </div>
