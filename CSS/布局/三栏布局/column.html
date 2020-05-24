@@ -66,7 +66,6 @@
             <!-- 当无高度时(最小高度也没有)，该布局无法使用，
                  当有高度，但高度未知时，中间部分过长，会溢出，文字会跑到两边去
                  解决方法：让中间的部分变成bfc -->
-
             <!-- <p>增加高度</p>
             <p>增加高度</p>
             <p>增加高度</p>
@@ -110,7 +109,7 @@
             <p>给总的宽度加一个min-width，不然缩小窗口会有毛病</p>
 
             <!-- 当无高度时(最小高度也没有)，该布局无法使用，
-                 当有高度，但高度未知时，中间部分过长，不会溢出-->
+                 当有高度，但高度未知时，中间部分过长，不会溢出，但两边不会同步高度-->
             <!-- <p>增加高度</p>
             <p>增加高度</p>
             <p>增加高度</p>
@@ -118,7 +117,48 @@
         </main>
     </section>
 
+<!-- flex布局 -->
+<section class="layoutFlex">
+    <style>
+        .layoutFlex {
+            margin-top: 200px;
+            display: flex;
+           
+        }
 
+        .layoutFlex .left {
+            width: 300px;
+           
+
+        }
+
+        .layoutFlex .center {
+            flex: 1;
+        }
+
+        .layoutFlex .right {
+            width: 300px;
+            
+        }
+
+       
+    </style>
+    <aside class="left"></aside>
+    <main class="center">
+        <h1>flex布局解决方案</h1>
+        <p>包裹这3个块的父元素display: flex; </p>
+        <p>两边元素设置宽度，中间的元素flex: 1，实现自适应</p>
+        <p>简单，无高度时也能很好自适应，但有兼容性问题</p>
+
+        <!-- 当无高度时(最小高度也没有)，该布局仍然可以使用，
+             当有高度，但高度未知时，中间部分过长，两边会同步长度-->
+        <!-- <p>增加高度</p>
+        <p>增加高度</p>
+        <p>增加高度</p>
+        <p>增加高度</p> -->
+    </main>
+    <aside class="right"></aside>
+</section>
 
 
 
