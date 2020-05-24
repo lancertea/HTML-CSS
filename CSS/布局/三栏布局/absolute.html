@@ -10,6 +10,7 @@
             padding: 0;
         }
 
+        /* 两边必须加高度，否则不显示 */
         aside {
             position: absolute;
             width: 300px;
@@ -44,6 +45,13 @@
         <p>左右区域分别postion：absolute，固定到左右两边</p>
         <p>中间区域postion：absolute；left：300px; right: 300px</p>
         <p>给总的宽度加一个min-width，不然缩小窗口会有毛病</p>
+
+        <!-- 当无高度时(最小高度也没有)，该布局无法使用，
+                 当有高度，但高度未知时，中间部分过长，不会溢出，但两边不会同步高度-->
+        <!-- <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p>
+            <p>增加高度</p> -->
     </main>
 </body>
 
