@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>将页脚固定到页面底部：grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .container {
+            /*不加高度三行会叠在一起 */
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: 100px 1fr 100px;
+
+            /* 缺点：两边高度会随着中间变化 */
+            /* grid-template-columns: 100px,1fr,100px; */
+        }
+
+        .header{
+        
+        background-color: lightskyblue;
+        }
+
+        .content {
+            background-color: lightpink;
+           
+            /* height:2000px; */
+           
+        }
+
+       
+        .footer {
+            /* position: absolute;
+            bottom: 0;
+            width: 100%; */
+         
+            background-color: lightseagreen;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">Header Section</header>
+        <main class="content">我是内容
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+      
+      
+        </main>
+        <footer class="footer">Footer Section</footer>
+    </div>
+
+</body>
+
+</html>
