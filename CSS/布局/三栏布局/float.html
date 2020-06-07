@@ -11,13 +11,12 @@
             margin: 0;
         }
        /* 必须加高度 */
-        /* .left,
+        .left,
         .right,
         .center {
             min-height: 100px;
-        } */
+        }
 
-    
         .left {
             background-color: red;
             width: 200px;
@@ -41,22 +40,23 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <aside class="left"></aside>
-        <main class="center">
-            <h1>flex布局解决方案</h1>
-            <p>包裹这3个块的父元素display: flex; </p>
-            <p>两边元素设置宽度，中间的元素flex: 1，实现自适应</p>
-            <p>简单，无高度时也能很好自适应，但有兼容性问题</p>
+    <aside class="left"></aside>
+    <aside class="right"></aside>
+    <main class="center">
+        <h1>浮动解决方案</h1>
+        <p>方法：left和right写在center前面，并且分别左右浮动；</p>
+        <p>
+            中间的main因为是块级元素，所以在水平方向上按照他的包容块自动撑开。
+        </p>
+        <p>简单，但是中心部分过长下面会溢出，然后文字就会跑到两边去。</p>
 
-            当无高度时(最小高度也没有)，该布局仍然可以使用，
-                 当有高度，但高度未知时，中间部分过长，两边会同步长度
+        <!-- 当无高度时(最小高度也没有)，该布局无法使用，
+                 当有高度，但高度未知时，中间部分过长，会溢出，文字会跑到两边去
+                 解决方法：让中间的部分变成bfc -->
+        <!-- <p>增加高度</p>
             <p>增加高度</p>
             <p>增加高度</p>
-            <p>增加高度</p>
-            <p>增加高度</p>
-        </main>
-        <aside class="right"></aside>
+            <p>增加高度</p> -->
     </main>
 </body>
 
