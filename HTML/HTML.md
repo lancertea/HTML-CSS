@@ -18,14 +18,20 @@ DOCTYPE是用来声明文档类型和DTD规范的。 <!DOCTYPE html>声明位于
 ### 行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 定义：CSS 规范规定，每个元素都有 display 属性，确定该元素的类型，每个元素都有默认的 display 值，如 div 的 display 默认值为“block”，则为“块级”元素；span 默认 display 属性值为“inline”，是“行内”元素。
 - 块级元素有：div ul ol li dl dt dd h1-h6 p
+
 block 独占一行，可以设置宽高，子元素的默认宽度为父元素宽度（仅是宽度可以）
 - 行内元素有：a b span img input select strong
+
 incline 可以与其他行内元素位于同一行，设置长度和宽度无效，由内容决定长度，但是可以设置左右内边距和外边距（仅左右内外边距设置有效，上下无效）
 - 行级块元素：img input button
+
 inline-block 让block元素不再独占一行，多个block元素可以同排一行，且元素具有block的属性，可设置宽高，是block和inline元素的综合体。
 - 空元素：没有内容的 HTML 元素
+
 常见: br hr img input link meta
+
 不常见: area base col command embed keygen param source track wbr
 - 自闭合标签：没有结束标签的标签
+
 表单元素 input、图片 img、换行 br、水平线 hr、meta 设置页面元信息、link 引用外部链接、base> 设置网页所有链接的相对目录(如根目录)
 
