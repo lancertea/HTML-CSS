@@ -1,5 +1,5 @@
 ### XML、HTML、SGML之间的关系
-![alt XML、HTML、SGML](E:\Git\HTML-CSS\img\HTML.png)
+![XML、HTML、SGML](https://github.com/lancertea/HTML-CSS/blob/master/img/HTML.png)
 - ML：“Markup language(置标语言)”，用标准的标记来解释纯文本文档的内容，从而提供关于文档结构或文档该如何渲染的信息。
 - GML：是第一代置标语言，使文档能明确将标示和内容分开，所有文件使用同样的标示方法。
 - SGML 在 GML 的基础上进行整理，形成了一套非常严谨的文件描述方法。它的组成包括语法定义，DTD，文件实例三部分。
