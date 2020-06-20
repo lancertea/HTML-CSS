@@ -89,3 +89,14 @@ html标签 | 伪元素选择器 1
 字符间隔：letter-spacing
 打断单词：word-break:break-all;
 
+#### 文本省略
+单行文本溢出显示省略号 
+1.不换行：white-space: nowrap;
+2.超出部分省略：overflow: hidden;
+3.多出的文本变成省略号：text-overflow: ellipsis;
+
+多行 除了IE都支持
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+
