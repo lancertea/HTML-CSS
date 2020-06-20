@@ -75,3 +75,17 @@ id选择器 100
 类选择器 | 属性选择器 | 伪类选择器 10  
 html标签 | 伪元素选择器 1  
 权重值相同的情况下，后面的样式会覆盖前面的
+
+### 文本
+首行缩进：text-indent
+文本对齐方式：text-align
+装饰线：text-decoration（none|underline|overline|line-through）
+
+字体：font-family
+字体大小： font-size
+字体粗细：font-weight
+字体样式：font-style（normal|italic）
+字体颜色：color
+字符间隔：letter-spacing
+打断单词：word-break:break-all;
+
