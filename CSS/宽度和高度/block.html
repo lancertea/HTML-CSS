@@ -6,12 +6,13 @@
     <title>块级元素的宽高</title>
 </head>
 <style>
-    /* 
+/* 
   单个div的高度不是里面文本的高度，而是(字体)建议的行高（比文本高度大）
   如果想明确行高 可以用line-height  不要用height
   div的高度=建议的行高|line-height+padding+border
- 
-  如果没设置宽度，div的宽度是浏览器的决定的，而不是里面的文本
+  如果没设置宽度，div的宽度是浏览器的决定的，而不是里面的文本（不空格的数字英文字母超过一行后会超出div）
+  
+  多个div设置padding、margin都有效，不过多个div的上下margin会合并
 
   如果div里面是行级元素，行级元素的padding、border、margin均不算做div的高度，只有内容算
 */
