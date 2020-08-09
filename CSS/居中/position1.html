@@ -6,10 +6,9 @@
     <title>居中：知道盒子宽高，利用盒子的宽高进行定位的方式</title>
 </head>
 <style>
-    html,
-    body {
-        height: 100%;
-        overflow: hidden;
+    *{
+        margin: 0;
+        padding: 0;
     }
 
     /* 知道盒子的宽高 */
@@ -23,9 +22,6 @@
     }
 
     /* 定位1：知道盒子宽高，利用盒子的宽高进行定位的方式*/
-    body {
-        position: relative;
-    }
 
     .box {
         position: absolute;

@@ -6,12 +6,6 @@
     <title>居中：不知道盒子宽高，使用CSS3 的 transform将位置在中心点平移自身宽高一半</title>
 </head>
 <style>
-    html,
-    body {
-        height: 100%;
-        overflow: hidden;
-    }
-
     /* 不知道盒子具体的宽高 */
     .box {
         box-sizing: border-box;
@@ -23,10 +17,6 @@
     }
 
     /* 定位3：不知道盒子具体的宽高，使用CSS3 的 transform将位置在中心点平移自身宽高一半*/
-    body {
-        position: relative;
-    }
-
     .box {
         position: absolute;
         top:50%;
