@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>1px在不同的浏览器和设备中显示真正的1像素的效果</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+
+            .a, .b{
+                width: 200px;
+                height: 100px;
+                position: relative;
+                background: lightblue;
+            }
+
+            .a{
+                border: 1px solid gray;
+            }
+
+            .b::before{
+                content: "";
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                border: 1px solid black;
+                transform-origin: 0 0;
+                transform: scale(0.5, 0.5);
+                box-sizing: border-box;
+            }
+
+        </style>
+    </head>
+    <body>
+<!-- 伪元素+CSS3的缩放 -->
+<div class="a">1px在不同的浏览器和设备中显示真正的1像素的效果</div>
+<div class="b">1px在不同的浏览器和设备中显示真正的1像素的效果</div>
+    </body>
+</html>
