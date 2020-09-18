@@ -11,17 +11,7 @@
         margin: 0;
     }
 
-    /* 上三角形 */
-    .tri{
-        width: 0px;
-        height: 0;
-        border-style: solid;
-        border-width: 100px;
-        border-color:transparent transparent black transparent;
-    }
-    
-  
-    .tri1{
+    .tri1 {
         width: 0px;
         height: 0;
         margin-top: 100px;
@@ -30,14 +20,24 @@
         border-color: black black transparent transparent;
     }
 
-    .que{
+    /* 上三角形 */
+    .tri {
+        width: 0px;
+        height: 0;
+        border-style: solid;
+        border-width: 100px;
+        border-color: transparent transparent black transparent;
+    }
+    
+    .que {
         width: 100px;
         height: 100px;
         border: 100px solid;
         border-color: red green blue orange;
     }
 
-    .trape{
+    /* 梯形 */
+    .trape {
         margin-bottom: 50px;
 
         width: 100px;
@@ -45,7 +45,7 @@
         border-color: transparent transparent black transparent;
     }
 
-    
+
 
     /* 
     .drag{
@@ -58,12 +58,10 @@
         border-bottom:20px solid;
     } 
     */
-
-   
 </style>
 
 <body>
-<!-- 
+    <!-- 
 border-width 不支持百分比值   原因：边框不会因为设备大就按比例变大
 border-width:thin|medium|thick
 border-style:solid(实线)|dashed(虚线)|dotted(点线)|double(双线)：双线宽度永远相等，中间间隔+/-1
