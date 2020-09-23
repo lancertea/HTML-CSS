@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>:hover和:focus显示浮层</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cs-list {
+            display: none;
+            position: absolute;
+            border: 1px solid red;
+            background-color: #fff;
+        }
+
+        .y-table:focus-within .cs-list {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="y-table">
+        <a href="javascript:;" class="y-msg">我的消息</a>
+        <div class="cs-list">
+            <a href="javascript:;">我的回答</a>
+            <a href="javascript:;">我的私信</a>
+            <a href="javascript:;">我的订单</a>
+            <a href="javascript:;">我的关注</a>
+            <a href="javascript:;">我的收藏</a>
+        </div>
+    </div>
+</body>
+
+</html>

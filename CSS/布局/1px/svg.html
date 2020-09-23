@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>svg解决方式</title>
+    <style>
+        .box1 {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .box2 {
+            box-sizing: border-box;
+            margin-top: 100px;
+            width: 100px;
+            height: 100px;
+            border: 0.5px solid black;
+        }
+
+        /* 
+        https://mp.weixin.qq.com/s/IfstO7MxoVNUNNuAFW7xMQ
+        如何修正高清屏下的1px问题
+        要解决1px问题，本质就是让高清屏用一个物理像素去展示一个css像素。
+        可以按照不同屏幕的dpr作出转换，比如在2倍屏下将1px的细线写成border:0.5px。但这种方法只在ios上支持，安卓上会显示成被当成0px处理。
+        更通用的方案中，有svg和伪类元素两种。
+
+        svg：将border一分为二，靠内的透明
+        通过postcss-write-svg这个postcss插件将css中svg函数生成的图像处理成base64。这样就可以在css文件直接调用svg函数。
+        svg中没有盒模型的概念，它的stroke画线并不是对应css中的border。更像是不占空间的outline。
+         */
+        
+    </style>
+</head>
+
+<body>
+    <div class="box1">123</div>
+    <div class="box2">456</div>
+</body>
+
+</html>
