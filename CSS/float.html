@@ -61,6 +61,13 @@
         overflow: hidden;
     }
 
+    #m4 {
+        width: 500px;
+        background: lightblue;
+        /* 解决方式4：父类设置高度 */
+        height: 100px;
+    }
+
     /* 
      BFC 块级格式化上下文
      触发BFC overflow: hidden;  
@@ -88,6 +95,11 @@
 
     <div id="m3">
 
+        <div id="aa">1</div>
+        <div id="bb">2</div>
+    </div>
+
+    <div id="m4">
         <div id="aa">1</div>
         <div id="bb">2</div>
     </div>
