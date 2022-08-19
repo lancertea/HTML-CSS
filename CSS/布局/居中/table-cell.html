@@ -9,9 +9,11 @@
     .box {
         box-sizing: border-box;
         border: 1px solid red;
-        /* width: 100px;
-        height: 50px; */
-        line-height: 48px;
+        width: 100px;
+        /* 行内垂直对齐 */
+        height: 50px;
+        line-height: 50px;
+        /* 行内水平对齐 */
         text-align: center;
     }
 
@@ -21,21 +23,37 @@
         width: 500px;
         height: 500px;
         background: pink;
+        /* 垂直对齐 */
         display: table-cell;
         vertical-align: middle;
+    }
+
+    .outer1 {
+        width: 500px;
+        height: 500px;
+        background: yellow;
+        /* 垂直对齐 */
+        display: table-cell;
+        vertical-align: middle;
+         /*行内*/
         text-align: center;
     }
 
     .box {
-        display: inline-block;
+        /*块级*/
+        margin: 0 auto;
     }
 </style>
 
 <body>
     <div class="outer">
         <div class="box">
-            我是文本
+            我是文本1
         </div>
+    </div>
+
+    <div class="outer1">
+            我是文本2
     </div>
 
 </body>
