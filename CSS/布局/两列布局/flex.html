@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>两列布局：flex</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 必须加高度 */
+        .left,
+        .right,
+        .parent {
+            min-height: 600px;
+        }
+
+        .parent {
+            display: flex;
+        }
+
+        .left {
+            background-color: red;
+            width: 200px;
+        }
+
+        .right {
+            background-color: blue;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

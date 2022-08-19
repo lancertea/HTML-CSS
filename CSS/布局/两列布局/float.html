@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>两列布局：float</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       /* 必须加高度 */
+        .left,
+        .right {
+            min-height: 600px;
+        }
+
+        .left {
+            background-color: red;
+            width: 200px;
+            float: left;
+        }
+
+        .right {
+            background-color: blue;
+            margin-left: 200px;
+        }
+        /* 问题：清除浮动内部元素会掉出去 */
+        .inner{
+            background-color: green;
+            /* clear: both; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="right">
+        <div class="inner">123</div>
+    </div>
+</body>
+
+</html>

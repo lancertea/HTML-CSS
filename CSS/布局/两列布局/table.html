@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>两列布局：table</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 必须加高度 */
+        .left,
+        .right,
+        .parent {
+            min-height: 600px;
+        }
+
+        .parent {
+            display: table;
+            width: 100%;
+        }
+
+        .left {
+            background-color: red;
+            width: 200px;
+            /* td */
+            display: table-cell;
+        }
+
+        .right {
+            background-color: blue;
+             /* td */
+            display: table-cell;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

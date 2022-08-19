@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>两列布局：float-优化</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       /* 必须加高度 */
+        .left,
+        .right {
+            min-height: 600px;
+        }
+
+        .left {
+            background-color: red;
+            width: 200px;
+            float: left;
+            /* 相对定位：提高层级 */
+            position: relative;
+        }
+
+        .outer {
+            background-color: blue;
+            float: right;
+            width: 100%;
+            margin-left: -200px;
+        }
+        
+        .right{
+            background-color: yellowgreen;
+            margin-left: 200px;
+        }
+
+        .inner{
+            background-color: green;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left"></div>
+    <div class="outer">
+        <div class="right">
+            <div class="inner">123</div>
+        </div>
+    </div>
+</body>
+
+</html>

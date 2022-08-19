@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>两列布局：grid</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 必须加高度 */
+        .left,
+        .right,
+        .parent {
+            min-height: 600px;
+        }
+
+        .parent {
+            display: grid;
+            /* 每个列的宽度 */
+            grid-template-columns: 200px auto;
+        }
+
+        .left {
+            background-color: red;
+        }
+
+        .right {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
